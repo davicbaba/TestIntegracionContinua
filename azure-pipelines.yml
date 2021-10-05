@@ -38,5 +38,5 @@ steps:
     azureSubscription: 'Azure subscription 1 (d245ae3b-4ad5-4129-8f95-d46f046e9aeb)'
     appType: 'webApp'
     appName: 'daviscd'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(build.artifactStagingDirectory)\WebApp.zip'
     deploymentMethod: 'auto'
