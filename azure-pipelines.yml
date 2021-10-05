@@ -33,10 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1 (d245ae3b-4ad5-4129-8f95-d46f046e9aeb)'
     appType: 'webApp'
-    appName: 'daviscd'
-    package: '$(build.artifactStagingDirectory)\WebApp.zip'
-    deploymentMethod: 'auto'
+    WebAppName: 'daviscd'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
